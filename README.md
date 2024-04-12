@@ -1,4 +1,4 @@
-# tamatama (WIP)
+# tamatama
 
 28 Key Dactyl with dual trackballs
 
