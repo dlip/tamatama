@@ -6,7 +6,7 @@
 
 ## Layout
 
-A compact but full-featured and intuitive layout for programming and prose with chording for frequent words. [Read more](https://github.com/dlip/qmk_firmware/blob/dlip/keyboards/tamatama/keymaps/engram/README.md)
+Based on [Arno's Engram v2.0](https://engram.dev/) layout. A compact but full-featured and intuitive layout for programming and prose with chording for frequent words. [Read more](https://github.com/dlip/qmk_firmware/blob/dlip/keyboards/tamatama/keymaps/engram/README.md)
 
 ![](https://raw.githubusercontent.com/dlip/qmk_firmware/dlip/keyboards/tamatama/keymaps/engram/dlip's-28-key-engram-layout.png)
 
