@@ -14,7 +14,7 @@ const options: Options = {
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: false,
-  verticalClearance: 10,
+  verticalClearance: 1,
   clearScrews: true,
   shell: { type: "basic", lip: false }
 }
@@ -28,7 +28,7 @@ const curvature = {
   curvatureOfColumn: 20,
   curvatureOfRow: 0,
   spacingOfRows: 17,
-  spacingOfColumns: 20,
+  spacingOfColumns: 18,
   arc: 0
 }
 
@@ -65,7 +65,7 @@ const fingers: Key[] = [
         column: -3.5,
         row: 0
       })
-      .translate(13, -10, 13)
+      .translate(11, -5, 15)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 1)
   },
@@ -310,17 +310,33 @@ const thumbOrigin = new Trsf()
     .transformBy(upperKeysPlane)
     .translate(8.75, -8.75, 0)
   )
-  .translate(15, -3, 4)
+  .translate(8, -1, 4)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
   curvatureOfRow: 0,
   curvatureOfColumn: 0,
-  spacingOfColumns: 20,
+  spacingOfColumns: 18,
   spacingOfRows: 20
 }
 
 const thumbs: Key[] = [
+  {
+    type: "choc",
+    keycap: { profile: "choc", row: 5 },
+    cluster: "thumbs",
+    aspect: 1,
+    position: new Trsf()
+      .rotate(0, [0, 0, 0], [1, 0, 0])
+      .rotate(0, [0, 0, 0], [0, 1, 0])
+      .rotate(0, [0, 0, 0], [0, 0, 1])
+      .placeOnMatrix({
+        ...thumbCurvature,
+        column: -1,
+        row: 0
+      })
+      .transformBy(thumbOrigin)
+  },
   {
     type: "choc",
     keycap: {
