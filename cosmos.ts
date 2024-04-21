@@ -25,7 +25,7 @@ const options: Options = {
 // connectorIndex: 0
 
 const curvature = {
-  curvatureOfColumn: 20,
+  curvatureOfColumn: 18,
   curvatureOfRow: 0,
   spacingOfRows: 17,
   spacingOfColumns: 18,
@@ -65,9 +65,23 @@ const fingers: Key[] = [
         column: -3.5,
         row: 0
       })
-      .translate(11, -5, 15)
+      .translate(9, -7, 15)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 1)
+  },
+  {
+    type: "ec11",
+    aspect: 2,
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        ...curvature,
+        curvatureOfColumn: 0,
+        column: -3,
+        row: -1
+      })
+      .translate(-1.5, 6, 15)
+      .transformBy(upperKeysPlane)
   },
   {
     type: "choc",
@@ -299,7 +313,7 @@ const fingers: Key[] = [
 const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(0, [0, 0, 0], [0, 1, 0])
-  .rotate(9, [0, 0, 0], [0, 0, 1])
+  .rotate(10, [0, 0, 0], [0, 0, 1])
   .translate(-45, -15, -5)
   .translateBy(new Trsf()
     .placeOnMatrix({
@@ -310,7 +324,7 @@ const thumbOrigin = new Trsf()
     .transformBy(upperKeysPlane)
     .translate(8.75, -8.75, 0)
   )
-  .translate(8, -1, 4)
+  .translate(-5, -5, 3)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
@@ -321,22 +335,6 @@ const thumbCurvature = {
 }
 
 const thumbs: Key[] = [
-  {
-    type: "choc",
-    keycap: { profile: "choc", row: 5 },
-    cluster: "thumbs",
-    aspect: 1,
-    position: new Trsf()
-      .rotate(0, [0, 0, 0], [1, 0, 0])
-      .rotate(0, [0, 0, 0], [0, 1, 0])
-      .rotate(0, [0, 0, 0], [0, 0, 1])
-      .placeOnMatrix({
-        ...thumbCurvature,
-        column: -1,
-        row: 0
-      })
-      .transformBy(thumbOrigin)
-  },
   {
     type: "choc",
     keycap: {
@@ -370,6 +368,22 @@ const thumbs: Key[] = [
       .placeOnMatrix({
         ...thumbCurvature,
         column: 1,
+        row: 0
+      })
+      .transformBy(thumbOrigin)
+  },
+  {
+    type: "choc",
+    keycap: { profile: "choc", row: 5 },
+    cluster: "thumbs",
+    aspect: 1,
+    position: new Trsf()
+      .rotate(0, [0, 0, 0], [1, 0, 0])
+      .rotate(0, [0, 0, 0], [0, 1, 0])
+      .rotate(0, [0, 0, 0], [0, 0, 1])
+      .placeOnMatrix({
+        ...thumbCurvature,
+        column: 2,
         row: 0
       })
       .transformBy(thumbOrigin)
