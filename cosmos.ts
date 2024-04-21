@@ -4,7 +4,7 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "choc",
-  screwIndices: [21.5, 27.5, 36.6],
+  screwIndices: [],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
@@ -14,7 +14,7 @@ const options: Options = {
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: false,
-  verticalClearance: 3,
+  verticalClearance: 2,
   clearScrews: true,
   shell: { type: "basic", lip: false }
 }
@@ -25,7 +25,7 @@ const options: Options = {
 // connectorIndex: 0
 
 const curvature = {
-  curvatureOfColumn: 20,
+  curvatureOfColumn: 19,
   curvatureOfRow: 0,
   spacingOfRows: 17,
   spacingOfColumns: 18,
@@ -38,7 +38,7 @@ const curvature = {
  */
 const pinkyCurvature = {
   ...curvature,
-  curvatureOfColumn: 25
+  curvatureOfColumn: 27
 }
 
 /**
@@ -47,25 +47,25 @@ const pinkyCurvature = {
  * then translated by the z offset.
  */
 const upperKeysPlane = new Trsf()
-  .rotate(25, [0, 0, 0], [0, 1, 0], false)
-  .rotate(1, [0, 0, 0], [1, 0, 0], false)
+  .rotate(0, [0, 0, 0], [0, 1, 0], false)
+  .rotate(0, [0, 0, 0], [1, 0, 0], false)
   .translate(0, 0, 0, false)
 
 
 /** Definitions for the upper keys. */
 const fingers: Key[] = [
   {
-    type: "trackball",
+    type: "cirque-40mm",
     aspect: 1,
     cluster: "fingers",
-    size: { radius: 20.9, sides: 50 },
+    size: { sides: 50 },
     position: new Trsf()
       .placeOnMatrix({
         ...curvature,
         column: -3.5,
-        row: 0.20000000000000018
+        row: 0
       })
-      .translate(8, 19, 0)
+      .translate(12, 0, 10)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 1)
   },
@@ -139,7 +139,7 @@ const fingers: Key[] = [
         column: 0,
         row: -1
       })
-      .translate(0, 5, -5)
+      .translate(0, 2, -5)
       .transformBy(upperKeysPlane)
   },
   {
@@ -158,7 +158,7 @@ const fingers: Key[] = [
         column: 0,
         row: 0
       })
-      .translate(0, 5, -5)
+      .translate(0, 2, -5)
       .transformBy(upperKeysPlane)
   },
   {
@@ -176,7 +176,7 @@ const fingers: Key[] = [
         column: 0,
         row: 1
       })
-      .translate(0, 5, -5)
+      .translate(0, 2, -5)
       .transformBy(upperKeysPlane)
   },
   {
@@ -298,9 +298,9 @@ const fingers: Key[] = [
  */
 const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
-  .rotate(-60, [0, 0, 0], [0, 1, 0])
-  .rotate(30, [0, 0, 0], [0, 0, 1])
-  .translate(-45, 0, -15)
+  .rotate(0, [0, 0, 0], [0, 1, 0])
+  .rotate(10, [0, 0, 0], [0, 0, 1])
+  .translate(-45, -15, -5)
   .translateBy(new Trsf()
     .placeOnMatrix({
       ...curvature,
@@ -310,13 +310,13 @@ const thumbOrigin = new Trsf()
     .transformBy(upperKeysPlane)
     .translate(8.75, -8.75, 0)
   )
-  .translate(10, 0, 5)
+  .translate(10, -3, 0)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
   curvatureOfRow: 0,
   curvatureOfColumn: 0,
-  spacingOfColumns: 19,
+  spacingOfColumns: 22,
   spacingOfRows: 20
 }
 
