@@ -70,8 +70,13 @@ const fingers: Key[] = [
       .rotateTowards([0, 0, 1], 1)
   },
   {
-    type: "ec11",
-    aspect: 2,
+    type: "blank",
+    aspect: 1,
+    size: {
+      width: 35,
+      height: 12
+
+    },
     cluster: "fingers",
     position: new Trsf()
       .placeOnMatrix({
