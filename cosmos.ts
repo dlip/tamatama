@@ -14,7 +14,7 @@ const options: Options = {
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: false,
-  verticalClearance: 1,
+  verticalClearance: 0,
   clearScrews: true,
   shell: { type: "basic", lip: false }
 }
@@ -25,7 +25,7 @@ const options: Options = {
 // connectorIndex: 0
 
 const curvature = {
-  curvatureOfColumn: 18,
+  curvatureOfColumn: 20,
   curvatureOfRow: 0,
   spacingOfRows: 17,
   spacingOfColumns: 18,
@@ -38,7 +38,7 @@ const curvature = {
  */
 const pinkyCurvature = {
   ...curvature,
-  curvatureOfColumn: 27
+  curvatureOfColumn: 25
 }
 
 /**
