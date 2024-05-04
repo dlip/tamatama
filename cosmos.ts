@@ -4,14 +4,14 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "xda",
-  screwIndices: [-1, -1, -1, -1, -1, -1, -1],
+  screwIndices: [],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
   rounded: {},
   connector: "trrs",
   connectorSizeUSB: "average",
-  connectorIndex: -1,
+  connectorIndex: 31,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: true,
   verticalClearance: 0.1,
@@ -57,7 +57,7 @@ const fingers: Key[] = [
     type: "cirque-40mm",
     aspect: 1,
     cluster: "fingers",
-    size: { sides: 20 },
+    size: { sides: 50 },
     position: new Trsf()
       .placeOnMatrix({
         ...curvature,
@@ -85,7 +85,26 @@ const fingers: Key[] = [
         column: 0,
         row: -1.5
       })
-      .translate(0, 0, 0)
+      .translate(0, 0, 10)
+      .transformBy(upperKeysPlane)
+  },
+  {
+    type: "blank",
+    aspect: 1,
+    size: {
+      width: 55,
+      height: 10
+
+    },
+    cluster: "fingers",
+    position: new Trsf()
+      .placeOnMatrix({
+        ...curvature,
+        curvatureOfColumn: 0,
+        column: 0,
+        row: -2.5
+      })
+      .translate(0, 0, 10)
       .transformBy(upperKeysPlane)
   },
   {
@@ -173,9 +192,9 @@ const fingers: Key[] = [
  */
 const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
-  .rotate(-70, [0, 0, 0], [0, 1, 0])
-  .rotate(0, [0, 0, 0], [0, 0, 1])
-  .translate(-25, 0, 0)
+  .rotate(-50, [0, 0, 0], [0, 1, 0])
+  .rotate(10, [0, 0, 0], [0, 0, 1])
+  .translate(-15, -10, -3)
   .translateBy(new Trsf()
     .placeOnMatrix({
       ...curvature,
@@ -183,7 +202,7 @@ const thumbOrigin = new Trsf()
       column: -1
     })
     .transformBy(upperKeysPlane)
-    .translate(8.75, -8.75, 0)
+    .translate(0, 0, 0)
   )
   .rotate(0, [0, 0, 0], [0, 0, 1])
   .translate(0, 0, 0)
