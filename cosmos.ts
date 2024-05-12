@@ -113,7 +113,7 @@ const fingers: Key[] = [
       profile: "xda",
       row: 3,
       home: "index",
-      letter: "j"
+      letter: "1"
     },
     aspect: 1,
     cluster: "fingers",
@@ -132,7 +132,7 @@ const fingers: Key[] = [
       profile: "xda",
       row: 3,
       home: "middle",
-      letter: "k"
+      letter: "2"
     },
     aspect: 1,
     cluster: "fingers",
@@ -151,7 +151,7 @@ const fingers: Key[] = [
       profile: "xda",
       row: 3,
       home: "ring",
-      letter: "l"
+      letter: "3"
     },
     aspect: 1,
     cluster: "fingers",
@@ -170,7 +170,7 @@ const fingers: Key[] = [
       profile: "xda",
       row: 3,
       home: "pinky",
-      letter: ";"
+      letter: "4"
     },
     aspect: 1,
     cluster: "fingers",
@@ -221,7 +221,7 @@ const thumbs: Key[] = [
     keycap: {
       profile: "xda",
       row: 5,
-      letter: " ",
+      letter: "5",
       home: "thumb"
     },
     cluster: "thumbs",
@@ -240,7 +240,12 @@ const thumbs: Key[] = [
   },
   {
     type: "mx-better",
-    keycap: { profile: "xda", row: 5 },
+    keycap: {
+      profile: "xda",
+      row: 5,
+      letter: "6",
+      home: "thumb"
+    },
     cluster: "thumbs",
     aspect: 1,
     position: new Trsf()
