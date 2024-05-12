@@ -4,7 +4,7 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "xda",
-  screwIndices: [],
+  screwIndices: [1, 7.5, 13.5, 19.5],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
@@ -38,7 +38,7 @@ const curvature = {
  */
 const pinkyCurvature = {
   ...curvature,
-  curvatureOfColumn: 15
+  curvatureOfColumn: 0
 }
 
 /**
