@@ -11,7 +11,7 @@ const options: Options = {
   rounded: {},
   connector: "trrs",
   connectorSizeUSB: "average",
-  connectorIndex: 31,
+  connectorIndex: 30,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: true,
   verticalClearance: 0.1,
@@ -123,7 +123,7 @@ const fingers: Key[] = [
         column: -1,
         row: -0.5
       })
-      .translate(0, 0, 0)
+      .translate(0, -3, 0)
       .transformBy(upperKeysPlane)
   },
   {
@@ -161,7 +161,7 @@ const fingers: Key[] = [
         column: 1,
         row: -0.5
       })
-      .translate(0, 0, 0)
+      .translate(0, -3, 0)
       .transformBy(upperKeysPlane)
   },
   {
@@ -205,7 +205,7 @@ const thumbOrigin = new Trsf()
     .translate(0, 0, 0)
   )
   .rotate(0, [0, 0, 0], [0, 0, 1])
-  .translate(0, 0, 0)
+  .translate(-5, 0, 0)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
